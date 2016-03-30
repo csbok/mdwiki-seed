@@ -21,6 +21,8 @@
 
 [About](pages/about.md)
 [Download](pages/download.md)
+[Tools]()
+  * [Prototype Tools](pages/prototype-tools.md)
 
 <!-- A more complex navigation example: ----------------------------------------
 
