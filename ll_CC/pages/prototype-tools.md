@@ -26,3 +26,8 @@ Adobe AIR로 작성되어 멀티플렛폼을 지원한다. 유료.
 
 http://pencil.evolus.vn
 멀티플렛폼을 지원하며 무료이다.
+
+## PowerMockup
+
+http://www.powermockup.com
+MS 파워포인트 내에서 플러그인으로 사용된다. 유료.
