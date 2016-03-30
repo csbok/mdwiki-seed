@@ -1,7 +1,8 @@
 # Prototype Tools
 
-## [Sketch](https://www.sketchapp.com)
+## Sketch
 
+[https://www.sketchapp.com](https://www.sketchapp.com){:target="_blank"}
 Mac OSX만 지원하는 프로토타입툴. 유료다.
 
 ## [Oven](https://ovenapp.io)
