@@ -28,7 +28,7 @@
   * [C#](pages/csharp.md)
   * [Python](pages/python.md)
   * [PHP](pages/php.md)
-  * [Node.js](pages/nodejs.md)
+  * [JavaScript](pages/javascript.md)
 
 [Database]()
 
