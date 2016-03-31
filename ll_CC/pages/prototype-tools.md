@@ -31,3 +31,7 @@ http://pencil.evolus.vn
 
 http://www.powermockup.com
 MS 파워포인트 내에서 플러그인으로 사용된다. 유료.
+
+-----
+
+어떤 아름다운이 같은내용을 멋지게 포스팅 해주셨다. http://yslab.kr/94
