@@ -41,6 +41,8 @@
 
   * [Prototype Tools](pages/prototype-tools.md)
 
+[Edit](https://github.com/csbok/mdwiki-seed/tree/gh-pages/ll_CC/pages)  
+
 <!-- A more complex navigation example: ----------------------------------------
 
 [Menu Item 1]()
