@@ -91,3 +91,54 @@ import mainPage from './mainPage.js';
 prototype 상속 대신 class 상속도 사용할수 있게 된다.
 (자세한 ES2015문법은 https://babeljs.io/docs/learn-es2015 에서 참조)
 
+## ESLint로 문법 체크하기
+$ npm install eslint -g
+
+myapp$ eslint --init
+위 명령어를 실행하면 eslint 설정파일을 생성하기 위한 몇가지 질문을 한다.
+아래는 내취향에 따라 선택한 값들이다.
+1. User a popular style guide
+2. AirBnB
+3. JSON
+
+다 끝나면 myapp/.eslintrc.json 파일이 생성된것을 볼수 있다. (마지막에 선택한 타입에 따라 확장자가 달라질수 있다)
+이제 webpack 에서 작업을 수행할때 eslint로 문법도 체크하도록 하자
+
+myapp/webpack.config.js
+```javascript
+var path = require('path');
+module.exports = {
+    entry: __dirname + '/js/my-app.js',
+    output: {
+        path: __dirname + '/www/js',
+        filename: 'my-app.js'
+    },
+    module: {
+      // <<<<<<<<<< 추가된 부분 시작
+      preLoaders: [
+        {
+          test: path.join(__dirname, 'js'),
+          loader: 'eslint-loader'
+        }
+      ],
+      // 추가된부분 끝 >>>>>>>>>>
+      loaders: [
+        {
+          test: path.join(__dirname, 'js'),
+          loader: 'babel-loader',
+          query: {
+              presets: ['es2015']
+          }
+        }
+      ]
+    },
+    // <<<<<<<<<< 추가된 부분 시작
+    eslint: {
+      configFile: '.eslintrc.json'
+    },
+    // 추가된부분 끝 >>>>>>>>>>
+    devtool: '#inline-source-map'
+}
+```
+preLoaders 부분과 eslint 부분, 두부분이 추가되었다.
+이제 myapp$ webpack 을 실행하면 ES2015에 위배되는 문법 오류나 경고를 보여줄것이다.
