@@ -104,6 +104,8 @@ myapp$ eslint --init
 다 끝나면 myapp/.eslintrc.json 파일이 생성된것을 볼수 있다. (마지막에 선택한 타입에 따라 확장자가 달라질수 있다)
 이제 webpack 에서 작업을 수행할때 eslint로 문법도 체크하도록 하자
 
+npm install eslint-loader --save-dev
+
 myapp/webpack.config.js
 ```javascript
 var path = require('path');
