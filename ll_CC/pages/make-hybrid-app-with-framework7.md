@@ -35,7 +35,9 @@ myapp/js/my-app.js
 ```javascript
 ...
 var mainPage = require('./main-page');
-myApp.onPageInit('main-page', mainPage.onPageInit(myApp, $$, page));
+myApp.onPageInit('main-page', function(page) {
+  mainPage.onPageInit(myApp, $$, mainView, page));
+});
 ...
 ```
 
@@ -43,9 +45,10 @@ myapp/js/main-page.js
 ```javascript
 var mainPage = {};
 
-mainPage.onPageInit = function(myApp, $$, page) {
+mainPage.onPageInit = function(myApp, $$, mainView, page) {
   myApp.alert('load complete!');
 }
+
 
 module.exports = mainPage;
 ```
