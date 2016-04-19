@@ -24,7 +24,7 @@
 
 [Mobile App]()
   - - - -
-  * # Hybrid (PhoneGap/Cordova)
+  * Hybrid (PhoneGap/Cordova)
   *[Framework7](pages/make-hybrid-app-with-framework7.md)
 
 [Programming Language]()
