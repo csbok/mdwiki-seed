@@ -22,7 +22,12 @@
 [About](pages/about.md)
 [Download](pages/download.md)
 
-[Programming]()
+[Mobile App]()
+  - - - -
+  * # Hybrid (PhoneGap/Cordova)
+  *[Framework7](pages/make-hybrid-app-with-framework7.md)
+
+[Programming Language]()
 
   * [Java](pages/java.md)
   * [C#](pages/csharp.md)
@@ -36,6 +41,10 @@
   * [MSSQL Server](pages/mssql.md)
   * [Oracle](pages/oracle.md)
   * [MongoDB](pages/mongodb.md)
+
+[Editor]()
+
+  * [Atom](pages/atom-editor.md)
 
 [Tools]()
 
