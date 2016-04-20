@@ -14,6 +14,7 @@ https://opentutorials.org/module/1579
 https://atom.io/packages/emmet
 https://atom.io/packages/atom-beautify
 https://atom.io/packages/minimap
+https://atom.io/packages/split-diff
 https://atom.io/packages/activate-power-mode
 
 
