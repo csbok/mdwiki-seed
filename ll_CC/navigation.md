@@ -44,6 +44,7 @@
 
 [Editor]()
 
+  * [Visual Studio Code](pages/vscode.md)
   * [Atom](pages/atom-editor.md)
 
 [Tools]()
