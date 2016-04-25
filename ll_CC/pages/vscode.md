@@ -19,7 +19,7 @@ http://definitelytyped.org/tsd/
 
 VS Code는 기본으로 node.js의 디버깅이 가능하다.
 node.js 프로젝트 폴더를 열은 후, 
-[https://code.visualstudio.com/images/debugging_debugicon.png] 
+![](https://code.visualstudio.com/images/debugging_debugicon.png)
 위의 디버그 버튼을 누르면 좌측 트리뷰가 디버그 뷰로 바뀌는데, Play버튼을 누르면 launch.json 파일 템플릿을 생성해준다.
 본인의 프로젝트에 맞게(program의 항목을 시작파일, 예를들어 app.js 혹은 index.js등으로 변경) 설정한뒤 
 Node.js 환경을 선택하면 해당 js파일을 debug모드로 실행시켜준다. (다른 언어 확장도 깔면 그 언어 디버깅도 가능하다)
