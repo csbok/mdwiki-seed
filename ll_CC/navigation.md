@@ -36,6 +36,8 @@
   * [Python](pages/python.md)
   * [PHP](pages/php.md)
   * [JavaScript](pages/javascript.md)
+  * [NodeJS](pages/node-js.md)
+  * [Go](pages/go.md)
 
 [Database]()
 
