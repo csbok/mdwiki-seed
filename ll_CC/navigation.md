@@ -38,6 +38,7 @@
   * [JavaScript](pages/javascript.md)
   * [NodeJS](pages/node-js.md)
   * [Go](pages/go.md)
+  * [R](pages/r.md)
 
 [Database]()
 
