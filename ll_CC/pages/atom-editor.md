@@ -17,4 +17,6 @@ https://atom.io/packages/minimap
 https://atom.io/packages/split-diff
 https://atom.io/packages/activate-power-mode
 
-
+https://atom.io/packages/atom-html-preview
+brackets 처럼 수정하고 있는 파일을 지속적으로 리프래시 하여 보여준다.
+npm의 liver-server와도 같은 역할을 한다.
