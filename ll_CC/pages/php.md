@@ -45,7 +45,7 @@ xdebug.remote_autostart = 1
 3. VSCode에서 톱니바퀴 모양 아이콘(디버그 버튼)을 눌러 launch.json을 자동생성 한 후 디버깅 모드로 진입한다.
 
 
-## REST 서버만들기
+## CodeIgniter로 REST 서버만들기
 
 http://code.tutsplus.com/tutorials/working-with-restful-services-in-codeigniter--net-8814
 위 페이지를 참고해서 [RestServer](https://github.com/chriskacerguis/codeigniter-restserver)와 [RestClient](https://github.com/philsturgeon/codeigniter-restclient)를 적용한다.
