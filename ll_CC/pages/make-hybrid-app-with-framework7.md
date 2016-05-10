@@ -176,3 +176,34 @@ function onDeviceReady() {
 }
 ...
 ```
+
+## Daum Map API 사용
+http://developers.daum.net 에서 앱을 만든 후 API키를 발급받는다. 이때 하이브리드앱은 "모든 플렛폼"으로 발급 받아야 한다.
+또한 생성한 앱설정에 보면 "쿼터변경" 버튼이 있는데, 여기에서 사용할 서비스를 TEST에서 SERVICE로 변경해줘야한다.
+이후 index.html 마지막 부분에서
+```
+    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=발급받은API키"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    ...
+```
+위와같이 스크립트를 추가하고(src가 //로 시작하는데, http://로 변경해줘야만 한다)
+지도를 표시할 페이지에서
+```
+                      <div id="map" style="width:500px;height:400px;"></div>                    
+```
+지도 크기를 지정한 태그를 적어준다.
+마지막으로 my-app.js에서 해당 페이지에서 지도 설정값을 셋팅해주면 된다.
+예를들어 위의 div태그가 map.html에 있다면 (data-page도 map으로 되어있음)
+```
+myApp.onPageInit('map', function(page) {
+  var container = document.getElementById('map');
+  var options = {
+    center: new daum.maps.LatLng(33.450701, 126.570667),
+    level: 3
+  };
+});
+```
+위와같이 onPageInit()때 map에 지도 셋팅을 해주면 하이브리드 앱에서도 다음지도를 볼 수가 있다.
+
