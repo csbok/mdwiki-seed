@@ -149,6 +149,12 @@ preLoaders 부분과 eslint 부분, 두부분이 추가되었다.
 이제 myapp$ webpack 을 실행하면 ES2015에 위배되는 문법 오류나 경고를 보여줄것이다.
 
 ## PhoneGap(Cordova) Plugin 추가
+기본 플러그인은 https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-battery-status/index.html 문서보고 기본 사용법을 익히면 된다.
+https://cordova.apache.org/plugins
+https://build.phonegap.com/plugins
+http://plugins.telerik.com/cordova
+위의 주소에서 각 기관/업체에서 검증된 플러그인을 검색할 수도 있다.
+
 먼저 아래 명령어중 하나로 플러그인을 설치한다.
 phonegap plugin add [plugin name]
 cordova plugin add [plugin name]
