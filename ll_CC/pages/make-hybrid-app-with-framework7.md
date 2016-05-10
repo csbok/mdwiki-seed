@@ -147,3 +147,32 @@ module.exports = {
 ```
 preLoaders 부분과 eslint 부분, 두부분이 추가되었다.
 이제 myapp$ webpack 을 실행하면 ES2015에 위배되는 문법 오류나 경고를 보여줄것이다.
+
+## PhoneGap(Cordova) Plugin 추가
+먼저 아래 명령어중 하나로 플러그인을 설치한다.
+phonegap plugin add [plugin name]
+cordova plugin add [plugin name]
+
+index.html 파일 끝부분에 cordova.js를 추가해준다.
+```
+...
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
+```
+my-app.js 파일에 deviceready 콜백을 지정해주면 앱로드가 완료되고 코르도바 플러그인이 통신할 수 있을때 onDeviceReady()가 호출된다.
+```
+...
+window.onload = function(){
+  document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+  // 플러그인 초기화를 여기서 수행한다.
+}
+...
+```
