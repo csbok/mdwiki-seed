@@ -213,3 +213,29 @@ myApp.onPageInit('map', function(page) {
 ```
 위와같이 onPageInit()때 map에 지도 셋팅을 해주면 하이브리드 앱에서도 다음지도를 볼 수가 있다.
 
+## CrossWalk 사용하기
+
+안드로이드 4.4 버전부터는 기본 웹뷰가 크로미움으로 바뀌어서 별 문제 없는데,
+이전 버전은 웹뷰 퍼포먼스가 떨어져 애니메이션 같은걸 구동시키면 끊기는 느낌을 심하게 받는다.
+이땐 아래의 명령어로 CrossWalk를 플러그인으로 설치해주면 부드럽게 하이브리드앱을 구동할 수 있다.
+다만 CrossWalk도 내부적으론 Chromium을 사용하므로, 빌드 패키지가 그만큼 용량이 증가한다. (20MB정도)
+```
+$ cordova plugin add cordova-plugin-crosswalk-webview
+$ cordova build --release
+```
+다만 내 경우 cordova run android 같은 명령어로 디버그 apk만들면 CrossWalk가 적용이 안되는것 같다.
+그래서 --release옵션으로 만들어진 android-armv7-release-unsigned.apk에 키사인을 적용하고, zipalign을 적용시킨 후 폰에 다운로드 받아 설치하면 그때서야 CrossWalk로 바뀌어 높은 퍼포먼스를 낼수 있었다.
+절차는 아래와 같다. 최종 생성된 [출력파일명].apk를 배포하면 된다.
+```
+// keystore 파일 생성
+$ keytool -genkey -v -keystore [파일명].keystore -alias [알리아스] -keyalg RSA -keysize 2048 -validity 10000
+
+// keystore 를 사용하여 apk sign
+$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore [파일명].keystore android-armv7-release-unsigned.apk [알리아스]
+
+// sign이 잘 되었는지 verify
+$ jarsigner -verify -verbose -certs android-armv7-release-unsigned.apk
+
+// zipalign 적용
+$ zipalign -v 4 android-armv7-release-unsigned.apk [출력파일명].apk
+```
