@@ -55,6 +55,7 @@
 [Tools]()
 
   * [Prototype Tools](pages/prototype-tools.md)
+  * [Chrome Extension](pages/chrome-extension.md)
 
 [Edit](https://github.com/csbok/mdwiki-seed/tree/gh-pages/ll_CC/pages)  
 
