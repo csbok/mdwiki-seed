@@ -223,9 +223,14 @@ myApp.onPageInit('map', function(page) {
 $ cordova plugin add cordova-plugin-crosswalk-webview
 $ cordova build --release
 ```
-다만 내 경우 cordova run android 같은 명령어로 디버그 apk만들면 CrossWalk가 적용이 안되는것 같다.
-그래서 --release옵션으로 만들어진 android-armv7-release-unsigned.apk에 키사인을 적용하고, zipalign을 적용시킨 후 폰에 다운로드 받아 설치하면 그때서야 CrossWalk로 바뀌어 높은 퍼포먼스를 낼수 있었다.
-절차는 아래와 같다. 최종 생성된 [출력파일명].apk를 배포하면 된다.
+설치후 꼭! cordova clean 명령어을 한번 수행해주자. 그래야 run이나 build 명령어로 apk를 새로 뽑았을때 crosswalk가 제대로 적용된다.
+
+## Release APK 생성하기
+```
+cordova build android --release
+```
+명령을 수행하면 android-armv7-release-unsigned.apk 파일이 생성된다. 
+이 파일에 키사인을 적용하고, zipalign을 적용시키면 폰에 직접 다운로드 받을 수도 있고, 플레이마켓에도 배포할 수 있게 된다.
 ```
 // keystore 파일 생성
 $ keytool -genkey -v -keystore [파일명].keystore -alias [알리아스] -keyalg RSA -keysize 2048 -validity 10000
