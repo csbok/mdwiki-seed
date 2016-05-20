@@ -27,6 +27,93 @@ ionic start [app name] --ts tabs
 phonegap/cordova를 래핑하였기에 똑같이 ionic server 명령어로 PC에서 확인하며 개발이 가능하다.
 또한 ionic upload 명령어로 iOS, Android에 있는 ionic view앱에서 직접 실행도 가능하다.
 
+## REST 통신하기
+```
+$ ionic platform add android
+$ ionic platform add ios
+$ cordova plugin add cordova-plugin-whitelist
+```
+먼저 iOS와 Android 플렛폼을 추가한 뒤, whitelist plugin을 설치한다. (플러그인은 플렛폼 단위로 설치되니 플렛폼 추가를 먼저하자)
+### GET방식으로 통신하기
+통신할 페이지로 가서 코드를 아래와 같이 변경한다.
+```
+import {Page} from 'ionic-angular';
+import {Http} from 'angular2/http';
+import 'rxjs/add/operator/map';
+
+@Page({
+  templateUrl: 'build/pages/page3/page3.html'
+})
+export class Page3 {
+  constructor(http: Http) {
+
+    http.get('http://localhost:3000/').map(res => res.json()).subscribe(data => alert(data.message));
+  }
+}
+```
+Http를 DI로 받아, get명령어로 호출하면 {message:'test'}와 같은 json 출력을 해당 주소(localhost:3000)에서 받아올 수 있다.
+
+### POST 방식으로 통신하기
+```
+import {Page} from 'ionic-angular';
+import {Http, Headers, Response} from 'angular2/http';
+import 'rxjs/add/operator/map';
+
+@Page({
+  templateUrl: 'build/pages/page3/page3.html'
+})
+export class Page3 {
+  constructor(http: Http) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.post(
+      'http://localhost:3000/login',
+      JSON.stringify({email:this.user.username, password:this.user.password}),
+      {headers:headers}
+    ).map((res: Response) => res.json())
+    .subscribe(res => { alert(res.message); });
+  }
+}
+```
+위의 코드로 작업할 경우 node.js + express + body-parser로 되있는 서버 환경에서 값을 무사히 받아온다.
+서버측 코드는 다음과 같다.
+```
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+
+app.get('/', function (req, res) {
+  res.send({success: true, message: 'this is a test message'});
+});
+
+app.post('/login', function(req,res) {
+  console.log('email : ' + req.body['email']);
+  console.log('password : ' + req.body['password']);
+
+  res.send({success:true, message:'succes!'});
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+```
+하지만 php + code-igniter 환경에서 form으로 전송받는 탓에 위의 값들이 제대로 넘어가지 않았다.
+php + code-igniter 환경이라면 아래와 같이 header와 bodydata를 수정해줘야 한다.
+```
+...
+var headers = new Headers();
+headers.append('Content-Type', 'application/x-www-form-urlencoded'); // application/json 대신 사용
+this.http.post('http://localhost/index.php/daterecipe/user/login',
+'email='+this.user.username+'&password='+this.user.password, // JSON.stringify 대신 사용
+{headers:headers})
+...
+```
+
 
 ## 테마 변경
 ionic framework 2는 구동되는 환경에 따라서 iOS, Material Design(Android), Windows Phone Theme 이렇게 3가지 스타일을 제공한다.
