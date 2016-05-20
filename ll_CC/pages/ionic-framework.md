@@ -108,7 +108,7 @@ php + code-igniter 환경이라면 아래와 같이 header와 bodydata를 수정
 ...
 var headers = new Headers();
 headers.append('Content-Type', 'application/x-www-form-urlencoded'); // application/json 대신 사용
-this.http.post('http://localhost/index.php/daterecipe/user/login',
+this.http.post('http://localhost/login',
 'email='+this.user.username+'&password='+this.user.password, // JSON.stringify 대신 사용
 {headers:headers})
 ...
