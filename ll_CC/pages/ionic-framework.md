@@ -114,6 +114,56 @@ this.http.post('http://localhost/index.php/daterecipe/user/login',
 ...
 ```
 
+## Daum Map API 사용
+http://developers.daum.net 에서 앱을 만든 후 API키를 발급받는다. 이때 하이브리드앱은 "모든 플렛폼"으로 발급 받아야 한다.
+또한 생성한 앱설정에 보면 "쿼터변경" 버튼이 있는데, 여기에서 사용할 서비스를 TEST에서 SERVICE로 변경해줘야한다.
+이후 index.html 상단 meta 태그들이 모여있는 부분에
+```
+<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+```
+를 추가하고, 파일의 긑 부분에서
+```
+    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=발급받은API키"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    ...
+```
+위와같이 스크립트를 추가하고(src가 //로 시작하는데, http://로 변경해줘야만 한다)
+지도를 표시할 페이지(ex: page1.html)에서
+```
+                      <div id="map" style="width:500px;height:400px;"></div>                    
+```
+지도 크기를 지정한 태그를 적어준다.
+이후 ts파일(ex: page1.ts)의 코드를 다음과 같이 작성한다.
+```
+import {Page, Platform} from 'ionic-angular';
+
+@Page({
+  templateUrl: 'build/pages/page1/page1.html',
+})
+export class Page1 {
+  platform: Platform;
+  
+  constructor(platform: Platform) {
+    this.platform = platform;
+    this.initMap();
+  }
+  
+  initMap() {
+    this.platform.ready().then(() => {
+      var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+      var options = { //지도를 생성할 때 필요한 기본 옵션
+        center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+        level: 3 //지도의 레벨(확대, 축소 정도)
+      };
+
+      var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
+    });
+  }
+}
+```
+platform.ready()는 cordova의 onDeviceReady()와 같은 역할이다. 디바이스의 준비가 완료되면,
+다음맵 api 예제 코드를 그대로 붙여넣으면 지도가 정상 동작한다.
+다음맵 api는 JavaScript코드지만, 어짜피 TypeScript가 JavaScript의 슈퍼셋이므로 별 무리 없이 돌아간다.
 
 ## 테마 변경
 ionic framework 2는 구동되는 환경에 따라서 iOS, Material Design(Android), Windows Phone Theme 이렇게 3가지 스타일을 제공한다.
