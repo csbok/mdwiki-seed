@@ -16,6 +16,7 @@ Native 관련 부분은 Cordova를 래핑하여 사용하고 있고,
 
 환경이나 API, 문서화등도 깔끔하게 잘 정리되있어 사용자 층이 두텁다.
 
+## 시작하기
 ```
 ionic start [app name] --ts tabs
 ```
@@ -26,3 +27,25 @@ ionic start [app name] --ts tabs
 phonegap/cordova를 래핑하였기에 똑같이 ionic server 명령어로 PC에서 확인하며 개발이 가능하다.
 또한 ionic upload 명령어로 iOS, Android에 있는 ionic view앱에서 직접 실행도 가능하다.
 
+
+## 테마 변경
+ionic framework 2는 구동되는 환경에 따라서 iOS, Material Design(Android), Windows Phone Theme 이렇게 3가지 스타일을 제공한다.
+하지만 어느환경에서도 한가지 테마로 정해서 보이고 싶을때가 있는데 이때는 app/app.ts 파일을 열어서 다음을 수정한다
+```
+@App({
+  
+  ...
+  
+  config: {
+    mode: 'md'
+  }
+})
+export class MyApp {
+...
+```
+| Platform      | Mode           |
+| ------------- |----------------|
+| iOS           | mode: 'ios'    |
+| Android       | mode: 'md'     |
+| Windows       | mode: 'wp'     |
+위와 같은 값으로 config의 mode값을 변경하면 된다.
