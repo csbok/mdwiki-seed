@@ -42,6 +42,8 @@ xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
 ```
 위와 같은 설정을 추가한 후 apache를 재시작 한다.
+(주의 : C:\wamp\bin\php\php5.5.12\php.ini는 수정해도 소용없다. C:\wamp\bin\apache\apache2.4.9\bin\php.ini가 실제로 사용되는 파일이다. 확실하지 않을 경우 phpinfo()로 확인해보자)
+
 3. VSCode에서 톱니바퀴 모양 아이콘(디버그 버튼)을 눌러 launch.json을 자동생성 한 후 디버깅 모드로 진입한다.
 
 
