@@ -18,7 +18,7 @@ Native 관련 부분은 Cordova를 래핑하여 사용하고 있고,
 
 ## 시작하기
 ```
-ionic start [app name] --ts tabs
+ionic start [app name] --v2 --ts tabs
 ```
 위 명령을 실행하면 탭을 갖고있는 기본 템플릿이 생성된다.
 --ts를 붙였기에 TypeScript 프로그래밍 환경이 만들어지며, --ts옵션을 안붙이면 자바스크립트로 생성된다.
