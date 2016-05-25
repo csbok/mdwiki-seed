@@ -38,7 +38,7 @@ $ cordova plugin add cordova-plugin-whitelist
 통신할 페이지로 가서 코드를 아래와 같이 변경한다.
 ```
 import {Page} from 'ionic-angular';
-import {Http} from 'angular2/http';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Page({
@@ -56,7 +56,7 @@ Http를 DI로 받아, get명령어로 호출하면 {message:'test'}와 같은 js
 ### POST 방식으로 통신하기
 ```
 import {Page} from 'ionic-angular';
-import {Http, Headers, Response} from 'angular2/http';
+import {Http, Headers, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Page({
