@@ -60,6 +60,7 @@
 
   * [Prototype Tools](pages/prototype-tools.md)
   * [Chrome Extension](pages/chrome-extension.md)
+  * [RESTful API Client](pages/rest-api-client.md)
 
 [Edit](https://github.com/csbok/mdwiki-seed/tree/gh-pages/ll_CC/pages)  
 
