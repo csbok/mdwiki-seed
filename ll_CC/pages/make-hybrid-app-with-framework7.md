@@ -251,7 +251,7 @@ cordova build ios
 http://i.stack.imgur.com/GR5If.png
 
 위 이미지를 참고하여, bitcode를 yes가 아닌, no 로 바꿔준 후 프로젝트 저장 -> 클린 -> 다시 빌드 해보면 디바이스에서 WkWebView가 정상적으로 실행되는것을 볼 수 있다.
-
+단, WkWebView로 바꾼경우 ajax 통신이 안될수 있으니, 서버에서 12344 포트(플러그인 설치시 바꿀 수 있음)에 대해 CORS를 설정해주도록 한다. 
 
 ## Release APK 생성하기
 ```
