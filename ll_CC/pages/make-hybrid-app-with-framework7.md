@@ -225,6 +225,34 @@ $ cordova build --release
 ```
 설치후 꼭! cordova clean 명령어을 한번 수행해주자. 그래야 run이나 build 명령어로 apk를 새로 뽑았을때 crosswalk가 제대로 적용된다.
 
+## iOS에선 UIWebView 대신 WkWebView를 사용하기
+
+iOS에선 안드로이드와 달리 폰갭용 CrossWalk 플러그인이 지원되지 않는다. UIWebView로도 충분한 성능이 나오지만 좀 더 개선된 WkWebView로 변경해보자.
+
+cordova ios platform version 3 : https://github.com/Telerik-Verified-Plugins/WKWebView
+cordova ios platform version 4 : https://github.com/apache/cordova-plugin-wkwebview-engine
+
+버전 3와, 버전4로 나뉘는데 최신인 버전4가 좋겠지만, file:// 프로토콜에서 CORS이슈 때문에 F7에서의 페이지 이동이 안된다.
+```
+cordova platform list
+```
+위 명령어로 iOS 플렛폼의 버전을 확인해본 후, 3보다 크다면
+```
+cordova platform remove ios
+cordova platform add ios@3
+```
+위 명령어로 3.x.x의 iOS 플렛폼 버전을 추가해주도록 한다.
+이후, https://github.com/Telerik-Verified-Plugins/WKWebView 의 설치법을 참고하여 설치한 뒤,
+```
+cordova build ios
+```
+명령어로 빌드한 후, platforms/ios/projectname.xcodeproj 를 열어서 device에 넣으려고 하면 bitcode 관련 링크 에러가 발생하게 된다.
+
+http://i.stack.imgur.com/GR5If.png
+
+위 이미지를 참고하여, bitcode를 yes가 아닌, no 로 바꿔준 후 프로젝트 저장 -> 클린 -> 다시 빌드 해보면 디바이스에서 WkWebView가 정상적으로 실행되는것을 볼 수 있다.
+
+
 ## Release APK 생성하기
 ```
 cordova build android --release
