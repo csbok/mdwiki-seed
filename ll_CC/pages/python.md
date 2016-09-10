@@ -9,3 +9,10 @@ https://www.continuum.io/downloads
 $ jupyter notebook
 위 명령어를 실행하면 웹 인터페이스로 되어있는 명령어 입력 쉘을 실행할 수 있다.
 웹브라우저에 jupyter notebook이 실행되면 우측의 new 버튼을 눌러 Python을 선택하면 된다. 
+
+## jupyter notebook 에서 그래프 그리는 방법
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.plot(range(20),range(20))
+
+위와 같이 %matplotlib inline 를 먼저 입력하고 matplotlib를 사용하면, plt.show()를 호출하지 않아도 jupyter notebook 내부에 그래프가 보인다. 
