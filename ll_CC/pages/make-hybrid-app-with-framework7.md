@@ -27,7 +27,7 @@ Framework7에서  html 엘리먼트에 id로 접근하는 경우가 있는데  (
 어떠한 이벤트에 의해 다시 router.reloadPage('first.html'); 혹은  &lt;a href="first.html" data-reload="true"&gt;로 다시 읽게 된다면
 first.html에 있는 $$('#name')은  값을 읽거나 쓸수가 없게 된다. 이는 라우터가 리로드할때 first.html 가 단 하나가 아니게 되어 발생하는 문제로
 id대신 class로  변경하면 값을 읽거나 쓸수 있게된다. 즉, framework7으로 개발을 하다가 값이 안 읽히거나 써진다면,
-<input id="name" />와 $$('#name')대신  <input class="name" />와 $$('.name')으로 변경하여 읽을 수 있는지 확인해보자.
+&lt;input id="name"&gt;와 $$('#name')대신  &lt;input class="name"&gt;와 $$('.name')으로 변경하여 읽을 수 있는지 확인해보자.
 
 ## WebPack 설치
 $ npm install webpack -g
