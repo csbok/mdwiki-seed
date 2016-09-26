@@ -21,6 +21,14 @@ myapp$ phonegap serve
 JavaScript은 모듈화가 안되서 my-app.js가 금방 덩치가 커지고 지저분해질 수 있다.
 아래부터는 이를 해결하기 위한 WebPack 사용법이다.
 
+## Framework7 으로 코딩시 유의해아할 점
+Framework7에서  html 엘리먼트에 id로 접근하는 경우가 있는데  (예를들어  $$('#name') 식으로)
+이렇게 사용할때 유의해야할 경우가 있다.  first.html에서 second.html로  페이지 전환이 되고(a 태그나 router.loadPage()로)
+어떠한 이벤트에 의해 다시 router.reloadPage('first.html'); 혹은  <a href="first.html" data-reload="true">로 다시 읽게 된다면
+first.html에 있는 $$('#name')은  값을 읽거나 쓸수가 없게 된다. 이는 라우터가 리로드할때 first.html 가 단 하나가 아니게 되어 발생하는 문제로
+id대신 class로  변경하면 값을 읽거나 쓸수 있게된다. 즉, framework7으로 개발을 하다가 값이 안 읽히거나 써진다면,
+<input id="name" />와 $$('#name')대신  <input class="name" />와 $$('.name')으로 변경하여 읽을 수 있는지 확인해보자.
+
 ## WebPack 설치
 $ npm install webpack -g
 
