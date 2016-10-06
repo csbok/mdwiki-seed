@@ -20,3 +20,17 @@ http://www.benthicsoftware.com/golden.html
 
 - Navicat
 http://www.navicat.com
+
+# 배우기 좋은 곳 
+https://thebook.io/006696/
+http://www.gurubee.net
+
+# Ubuntu에서 설치
+http://blog.saltfactory.net/linux/install-oracle-xe-on-ubuntu.html
+위 블로그를 참조하여  리눅스용 rpm을 우분투에서 설치할 수 있다.
+
+혹은 docker를 사용하여 쉽게 설치를 할 수 있다.
+최근에 설치한 도커 이미지는 https://hub.docker.com/r/wnameless/oracle-xe-11g/ 이것이다.
+README에 있는대로 도커를 실행시킨 후 docker exec -it &lt;name&gt; bash 명령어로 접속한 후
+# sqlplus  /nolog
+SQL>  connect  sys/oracle  as sysdba
