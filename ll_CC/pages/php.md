@@ -62,4 +62,16 @@ RestServer는 적용해보니 delete 부분은 아래와 같이 수정해줘야�
 
 
 ## 컴포저 사용법
-[Haruair님 블로그](http://www.haruair.com/blog/1860) 에서 local이나 global로 설치한 뒤
+[Haruair님 블로그](http://www.haruair.com/blog/1860) 에서 local이나 global로 설치를 한다.
+로컬 기준으로 
+$ php composer.phar require 패키지명
+으로 개별 패키지를 설치할 수 있고
+프로젝트에 이미 composer.json파일이 있을경우에는 
+$ php composer.phar install
+명령어 만으로 모든 패키지의 설치가 가능하다
+
+컴포저가 글로벌로 설치되어 있는 경우는
+$ php composer.phar install
+대신
+$ composer install
+식으 입력하면 된다.
