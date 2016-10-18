@@ -59,3 +59,7 @@ RestServer는 적용해보니 delete 부분은 아래와 같이 수정해줘야�
         $this->set_response($message, REST_Controller::HTTP_OK );
     }
 ```        
+
+
+## 컴포저 사용법
+[Haruair님 블로그](http://www.haruair.com/blog/1860) 에서 local이나 global로 설치한 뒤
