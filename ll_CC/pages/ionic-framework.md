@@ -186,3 +186,10 @@ export class MyApp {
 | Android       | mode: 'md'     |
 | Windows       | mode: 'wp'     |
 위와 같은 값으로 config의 mode값을 변경하면 된다.
+
+## Moment 사용하기
+npm install moment --save
+
+import moment from 'moment';
+import 'moment/src/locale/ko';
+
