@@ -15,6 +15,14 @@ zip파일 내부에 dist 폴더만 사용한다.
 위에서 만든 폰갭 프로젝트 디렉토리(이하 myapp$) 으로 이동하여 기존 www 폴더를 삭제한다.
 dist폴더를 myapp폴더로 이동 후 www로 이름을 바꾼다.
 
+단 CSS의 경우 phonegap에 기본적으로 포함되있던 index.css에서
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+위의 속성을 Framework7의 my-app.css로 옮긴다. 그래야 추후 앱을 폰에서 실행했을때 long press등의 이벤트가 일어나더라도 웹페이지처럼 동작하지 않는다.
+
 myapp$ phonegap serve
 위 명령어로 서버를 구동 한 후 브라우저나 디바이스의 phonegap app에서 미리보기를 할 수 있다.
 여기까지만 해도 Framework7을 이용한 하이브리드앱 개발을 할 수 있지만,
