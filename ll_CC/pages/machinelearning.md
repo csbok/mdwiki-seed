@@ -34,3 +34,7 @@ https://www.youtube.com/playlist?list=PLzWH6Ydh35ggVGbBh48TNs635gv2nxkFI
 
 - Heesuk Son님(KAIST) 플레이리스트
 https://www.youtube.com/playlist?list=PLamqaOMCyiiTH8pEgdfDvyR3_ET3_7xT5
+
+
+## Roadmap
+https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal
