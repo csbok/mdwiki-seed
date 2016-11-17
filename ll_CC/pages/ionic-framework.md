@@ -193,3 +193,12 @@ npm install moment --save
 import moment from 'moment';
 import 'moment/src/locale/ko';
 
+## ion-img 에서 높이 100%로 적용되는 문제
+```
+<ion-img class="expanded-image" alt="Loading" [src]="imageUrl"></ion-img>
+
+.expanded-image img {
+  min-height: initial;
+}
+```
+출처: https://github.com/driftyco/ionic/issues/7473
