@@ -13,3 +13,18 @@ node.js는 싱글쓰레드 방식이라 1번코어만 일하고 나머지 코어
 2. socket.io 에서 1번 프로세스에 붙은 사람이 3번 프로세스 붙은사람과 통신 못하는 상황 (해결법 : https://blog.outsider.ne.kr/764)
 
 위와 같은 상황을 주의해서 개발해야한다.
+
+# versioning
+짝수 버전이 지원 기간이 긴 LTS 이다. (프로덕션에서 사용할만함)
+홀수 버전은 Stable 버전으로 새로운 피쳐를 적용해나가는 버전이다.
+신기술이 필요할땐 Stable버전을, 서버에 프로덕션으로 설치할땐 LTS가 좋다.
+
+# npm
+https://www.npmjs.com
+위 주소에서 node.js의 package 들을 볼수 있다.
+프로젝트 폴더에 package.json 파일이 있을경우
+npm install 명령어로 의존성 있는 패키지들을 설치할 수 있다.
+또한 npm install -g [PackageName] 으로 패키지를 전역으로 설치할 수 있다.
+별도 명령어를 지원하는 경우 전역으로 설치하면 커맨드명령어로 쓸 수 있다.
+또한 npm outupdated / npm outupdated -g 도 있는데
+설치 된 패키지/전역패키지의 현재버전과 최신버전을 알 수 있다.
