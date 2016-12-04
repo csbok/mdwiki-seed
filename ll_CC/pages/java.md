@@ -29,3 +29,7 @@ sudo unzip ProjectName.war -d ProjectName
 
 
 참고 : https://blog.lael.be/post/858
+
+
+## 스프링 프레임워크에서 자주 사용되는 annotation
+http://noritersand.tistory.com/156
