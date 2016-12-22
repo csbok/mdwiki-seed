@@ -202,3 +202,7 @@ import 'moment/src/locale/ko';
 }
 ```
 출처: https://github.com/driftyco/ionic/issues/7473
+
+## label 태그에서 for 속성 사용할때
+타입스크립트의 for 예약어때문에 attr.for 로 사용해줘야한다 
+https://github.com/angular/angular/issues/5435
