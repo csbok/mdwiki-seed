@@ -33,3 +33,12 @@ sudo unzip ProjectName.war -d ProjectName
 
 ## 스프링 프레임워크에서 자주 사용되는 annotation
 http://noritersand.tistory.com/156
+
+Spring MVC에서 Controller가 뷰 파일을 지정하지 않고, 직접 스트링을 리턴하고 싶을땐 
+@ResponseBody 를 사용하면 된다. 
+
+@RequestMapping(value="/controller", method=GET)
+@ResponseBody
+public String foo() {
+    return "Response!";
+}
