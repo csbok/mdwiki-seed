@@ -8,6 +8,9 @@ $ npm install phonegap -g
 $ phonegap create [DirName] [Identifier] [ProjectName]
 ex) phonegap create myapp net.finesoft.myapp MyApp
 
+$ phonegap platform add android --save
+위 명령어로 플렛폼을 추가한다.
+
 ## Framework7 설치
 http://framework7.io 에서 직접 zip을 받거나 bower로 설치
 zip파일 내부에 dist 폴더만 사용한다.
