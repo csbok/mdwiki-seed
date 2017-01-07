@@ -236,7 +236,7 @@ myApp.onPageInit('map', function(page) {
 이땐 아래의 명령어로 CrossWalk를 플러그인으로 설치해주면 부드럽게 하이브리드앱을 구동할 수 있다.
 다만 CrossWalk도 내부적으론 Chromium을 사용하므로, 빌드 패키지가 그만큼 용량이 증가한다. (20MB정도)
 ```
-$ cordova plugin add cordova-plugin-crosswalk-webview
+$ cordova plugin add cordova-plugin-crosswalk-webview --save
 $ cordova build --release
 ```
 설치후 꼭! cordova clean 명령어을 한번 수행해주자. 그래야 run이나 build 명령어로 apk를 새로 뽑았을때 crosswalk가 제대로 적용된다.
