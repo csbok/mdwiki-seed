@@ -49,6 +49,7 @@
   * [MSSQL Server](pages/mssql.md)
   * [Oracle](pages/oracle.md)
   * [MongoDB](pages/mongodb.md)
+  * [CouchDB](pages/couchdb.md)
 
 [Infra]()
 
@@ -70,6 +71,10 @@
 
   * [Arduino](pages/arduino.md)
   * [Raspberry Pi](pages/raspberrypi.md)
+  
+[ML](pages/machinelearning.md)
+
+[OS](pages/ubuntu-linux.md)
 
 [Edit](https://github.com/csbok/mdwiki-seed/tree/gh-pages/ll_CC/pages)  
 
