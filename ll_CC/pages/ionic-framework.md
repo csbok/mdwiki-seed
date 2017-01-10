@@ -206,3 +206,41 @@ import 'moment/src/locale/ko';
 ## label 태그에서 for 속성 사용할때
 타입스크립트의 for 예약어때문에 attr.for 로 사용해줘야한다 
 https://github.com/angular/angular/issues/5435
+
+## CLI
+ionic g page PAGENAME
+ionic g provider PROVIDERNAME
+ionic g component COMPONENTNAME
+
+등의 명령어로 템플릿 적용된 파일들을 쉽게 생성할 있다.
+
+## Input
+&lt;calendar [year]="2017" [month]="1"&gt;&lt/calendar&gt;
+컴포넌트를 만들때 엘리먼트에 프로퍼티를 전달 하고 싶은 경우, [ ] 괄호로 감싸서 넘겨준다.
+```
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'calendar',
+  template: '<div (click)="clickHandler('click!')">{{year}} {{month}}</div>'
+})
+export class Calendar {
+    @Input() year: number;
+    @input() month: number;
+
+    constructor() {
+        // 이곳에선 @Input으로 넘어온 값을 읽을 수가 없다.
+    }
+
+    ngOnInit() {
+        // ngOnInit에서 읽어야 한다.
+        console.log(year + ' / ' + month);
+    }
+}
+```
+받는 컴포넌트 측에서는 생성자에선 값을 못 받아오고, ngOnInit() 시점 이후에 읽을 수 있다.
+만약 ngOnInit에서도 @Input값이 설정이 안되면(undefined라던가) 로그를 찍어봐서, ngOnInit이 2번 호출되는건 아닌지 체크할 필요가 있다.
+나의 경우 angular2 프로젝트에서 컴포넌트를 @NgModule의 declarations에만 넣어주면 되는데, bootstrap안에 까지 넣어서 2번 호출되는 상황이 발생하였다.
+[https://github.com/angular/angular/issues/6782](https://github.com/angular/angular/issues/6782)에서 amardeep157 님의 글에서 해결책을 찾았다.
+
+참고 : [http://learnangular2.com/inputs](http://learnangular2.com/inputs/)  
