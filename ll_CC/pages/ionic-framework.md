@@ -214,6 +214,9 @@ ionic g component COMPONENTNAME
 
 등의 명령어로 템플릿 적용된 파일들을 쉽게 생성할 있다.
 
+## 빌드
+ionic build android --prod --release
+
 ## Input
 &lt;calendar [year]="2017" [month]="1"&gt;&lt/calendar&gt;
 컴포넌트를 만들때 엘리먼트에 프로퍼티를 전달 하고 싶은 경우, [ ] 괄호로 감싸서 넘겨준다.
