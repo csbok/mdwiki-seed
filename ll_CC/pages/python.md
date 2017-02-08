@@ -16,3 +16,19 @@ import matplotlib.pyplot as plt
 plt.plot(range(20),range(20))
 
 위와 같이 %matplotlib inline 를 먼저 입력하고 matplotlib를 사용하면, plt.show()를 호출하지 않아도 jupyter notebook 내부에 그래프가 보인다. 
+
+## Web Programming
+micro framework 가  필요할 경우에는 Flask,
+full stack framework 의 경우는 django를 선택한다.
+django에서 rest api를 구현할땐 django rest framework를 선택하자.
+
+django 튜토리얼은 아래의 문서가 잘 정리되어 있다.
+https://tutorial.djangogirls.org/ko/
+
+몇가지 빠진걸 추가하자면, mac이나 linux에선 venv를 실행하기 위해 source ./mysite/bin/activate와같이 명령어를 내려야한다.
+production의 경우 웹서버에 연결후 서비스를 하는게 맞지만, 테스트를 위해 서버에서 manage.py로 구동하는 경우는 아래와 같이 구동해야 접근 할 있다.
+python manage.py runserver 0.0.0.0:8000
+
+또한 도메인  기반으로 접근할땐,
+settings.py파일에 다음과 같이 변경한다.
+ALLOWED_HOSTS = ['ionic.finesoft.net', 'localhost', '127.0.0.1']
