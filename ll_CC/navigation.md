@@ -3,7 +3,7 @@
   -- Do NOT remove the leading `#` character.
   -->
 
-# 삽질은 단 한번뿐
+# 삽질은 한번뿐
 
 
 <!--
@@ -11,7 +11,7 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!customizing.md#Theme_chooser)
   -->
 
-[gimmick:theme](spacelab)
+[gimmick:theme](cerulean)
 
 
 <!--
