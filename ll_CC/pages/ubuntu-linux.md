@@ -49,7 +49,7 @@ server_name에는 접근될 도메인 주소를 넣습니다. (물론 CNAME을 �
 ip를 사용하실 경우는 server_name 행을 지우시고, listen 80 변경해주세요. (default 와 겹치기 때문입니다. 80을 사용하시려면 default를 지우시거나 /etc/nginx/site-available/default 를 직접 수정하세요)
 
 ``` bash
-sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enable/node
+sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
 sudo service nginx reload
 ```
 마지막으로 sites-enable에 site-available에서 방금 만든 node의 심볼릭 링크를 걸어준 후 서비스를 재시작하면 됩니다.
