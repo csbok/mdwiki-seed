@@ -67,12 +67,14 @@
   * [Prototype Tools](pages/prototype-tools.md)
   * [Chrome Extension](pages/chrome-extension.md)
   * [RESTful API Client](pages/rest-api-client.md)
+  
 <!--
 [Hardware]()
 
   * [Arduino](pages/arduino.md)
   * [Raspberry Pi](pages/raspberrypi.md)
-  -->
+-->
+  
 [ML](pages/machinelearning.md)
 
 [OS](pages/ubuntu-linux.md)
