@@ -18,10 +18,19 @@
   -- Navigation
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
+<!--  * [CSS](pages/css.md) -->
+<!--  * [C#](pages/csharp.md) -->
+<!--  * [MSSQL Server](pages/mssql.md) -->
+<!--
+[Hardware]()
+
+  * [Arduino](pages/arduino.md)
+  * [Raspberry Pi](pages/raspberrypi.md)
+-->
+
 
 [Web]()
 
-<!--  * [CSS](pages/css.md) -->
   * [Front-end UI](pages/web-front-end.md)
   * [Web Test Env](pages/web-env.md)
 
@@ -36,7 +45,6 @@
 [Programming Language]()
 
   * [Java](pages/java.md)
-<!--  * [C#](pages/csharp.md) -->
   * [Python](pages/python.md)
   * [PHP](pages/php.md)
   * [JavaScript](pages/javascript.md)
@@ -47,7 +55,6 @@
 [Database]()
 
   * [MySQL](pages/mysql.md)
-<!--  * [MSSQL Server](pages/mssql.md) -->
   * [Oracle](pages/oracle.md)
   * [MongoDB](pages/mongodb.md)
   * [CouchDB](pages/couchdb.md)
@@ -67,14 +74,7 @@
   * [Prototype Tools](pages/prototype-tools.md)
   * [Chrome Extension](pages/chrome-extension.md)
   * [RESTful API Client](pages/rest-api-client.md)
-  
-<!--
-[Hardware]()
-
-  * [Arduino](pages/arduino.md)
-  * [Raspberry Pi](pages/raspberrypi.md)
--->
-  
+    
 [ML](pages/machinelearning.md)
 
 [OS](pages/ubuntu-linux.md)
