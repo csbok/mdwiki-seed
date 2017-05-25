@@ -1,3 +1,4 @@
+
 # Python
 
 공식사이트는 http://www.python.org
@@ -32,3 +33,29 @@ python manage.py runserver 0.0.0.0:8000
 또한 도메인  기반으로 접근할땐,
 settings.py파일에 다음과 같이 변경한다.
 ALLOWED_HOSTS = ['ionic.finesoft.net', 'localhost', '127.0.0.1']
+
+## Crawling
+단순 문서 파싱에는 Beautiful Soup을 쓰는게 좋고,
+주기적으로 여러 범위에서 크롤링을 해올땐 프레임워크 형태로 제공되는 Scrapy가 좋다.
+
+아래는 Scrapy에 대한 설명이다.
+```
+pip install scrapy
+```
+윈도우의 경우에는 Microsoft Visual C++ Build Tools (http://landinghub.visualstudio.com/visual-cpp-build-tools)가 있어야 설치가 된다.
+(없을경우 에러메시지에서 설명해줌)
+
+```
+scrapy shell '크롤링할 url'
+```
+위의 명령어로 REPL쉘을 열어서 크롤링할 사이트에 대해서 탐색해볼 수 있다.
+윈도우의 경우 실행할때 ModuleNotFoundError: No module named 'win32api' 에러가 났는데
+```
+pip install pypiwin32
+```
+설치해주면 해결된다.
+쉘에서
+```
+>>> response.xpath('//title/text()').extract()
+```
+위의 코드로 title의 내용을 추출해 낼 수 있다.
