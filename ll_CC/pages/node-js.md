@@ -36,6 +36,9 @@ npm install 명령어로 의존성 있는 패키지들을 설치할 수 있다.
 또한 npm outupdated / npm outupdated -g 도 있는데
 설치 된 패키지/전역패키지의 현재버전과 최신버전을 알 수 있다.
 npm ls 명령어로 현재 프로젝트 모듈들의 설치 상황도 알 수 있다.
+npmjs.com에 패키징되서 올라온 모듈의 경우는 어느정도 안정화 된 버전이 많은데,
+git repositiory에 있는 소스째로 설치를 하고자 할 경우에는 git+를 붙여주면 된다.
+ex) npm install git+https://github.com/zeniroy/node-orm2.git
 
 # PhantomJS 에서 Font 문제(한글)
 한글 폰트가 없어서 PhantomJS에서 여는 한글 사이트의 폰트가 깨지는 현상은 아래와 같이 해결한다.
