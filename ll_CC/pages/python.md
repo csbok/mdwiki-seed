@@ -47,13 +47,13 @@ AWS_SECRET_ACCESS_KEY = 'AWS시크릿액세스키'
 AWS_STORAGE_BUCKET_NAME = 'S3버킷이름'
 
 단, 서울이나 프랑크푸르트와 같이 최근에 생성된 리전의 경우 Signature Version 4만 지원하기 때문에 동작하지 않을 수 있다.
-이때는 아래와 같이 리전을 강제로 한국(ap-northeast-2)로 지정해주면 된다. (ref)[http://sebatyler.github.io/2016/07/16/django-storages-seoul.html]
+이때는 아래와 같이 리전을 강제로 한국(ap-northeast-2)로 지정해주면 된다. [ref](http://sebatyler.github.io/2016/07/16/django-storages-seoul.html)
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 
 또 다른 방법으론 
 AWS_QUERYSTRING_AUTH = False
 플래그를 셋팅하여, 이미지 url뒤에 붙는 get method의 키=값들을 사용하지 않는 것이다.
-단 이 방식을 사용하게 되면, S3에서도 권한 체크를 하지 않게 아래와 같이 권한 설정을 해줘야 한다. (ref)[http://djangotricks.blogspot.kr/2013/12/how-to-store-your-media-files-in-amazon.html]
+단 이 방식을 사용하게 되면, S3에서도 권한 체크를 하지 않게 아래와 같이 권한 설정을 해줘야 한다. [ref](http://djangotricks.blogspot.kr/2013/12/how-to-store-your-media-files-in-amazon.html)
 버킷선택 후 Permissions탭에서 Bucket Policy에 아래의 값을 넣는다.
 ```
 {
