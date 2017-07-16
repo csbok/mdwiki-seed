@@ -34,6 +34,45 @@ python manage.py runserver 0.0.0.0:8000
 settings.py파일에 다음과 같이 변경한다.
 ALLOWED_HOSTS = ['ionic.finesoft.net', 'localhost', '127.0.0.1']
 
+### AWS S3에 이미지 올리기
+```
+pip install boto3
+pip install django-storages  # s를 꼭 붙여야 한다.
+```
+위의 패키지들을 설치해주고 settings.py에 다음과 같은 값을 셋팅한다.
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AWS액세스키'
+AWS_SECRET_ACCESS_KEY = 'AWS시크릿액세스키'
+AWS_STORAGE_BUCKET_NAME = 'S3버킷이름'
+
+단, 서울이나 프랑크푸르트와 같이 최근에 생성된 리전의 경우 Signature Version 4만 지원하기 때문에 동작하지 않을 수 있다.
+이때는 아래와 같이 리전을 강제로 한국(ap-northeast-2)로 지정해주면 된다. (ref)[http://sebatyler.github.io/2016/07/16/django-storages-seoul.html]
+AWS_S3_REGION_NAME = 'ap-northeast-2'
+
+또 다른 방법으론 
+AWS_QUERYSTRING_AUTH = False
+플래그를 셋팅하여, 이미지 url뒤에 붙는 get method의 키=값들을 사용하지 않는 것이다.
+단 이 방식을 사용하게 되면, S3에서도 권한 체크를 하지 않게 아래와 같이 권한 설정을 해줘야 한다. (ref)[http://djangotricks.blogspot.kr/2013/12/how-to-store-your-media-files-in-amazon.html]
+버킷선택 후 Permissions탭에서 Bucket Policy에 아래의 값을 넣는다.
+```
+{
+    "Version": "2017-07-17",
+    "Statement": [
+        {
+            "Sid": "AllowPublicRead",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::내버킷이름/*"
+        }
+    ]
+}
+```
+단 이방식의 경우, 모두에게 읽기 권한을 열어주게 되므로 url만 안다면 expired 없이 누구든 언제나 접근가능하게 되어 S3의 GET접근 COUNT가 예상보다 많이 오르게 되어 비용이 더 나올수 있으므로, 이 방식보다는 위의 방식(리전을 직접 지정하는 방식)을 추천한다.
+
 ## Crawling
 단순 문서 파싱에는 Beautiful Soup을 쓰는게 좋고,
 주기적으로 여러 범위에서 크롤링을 해올땐 프레임워크 형태로 제공되는 Scrapy가 좋다.
