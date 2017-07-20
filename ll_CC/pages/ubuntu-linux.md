@@ -54,3 +54,25 @@ sudo service nginx reload
 ```
 마지막으로 sites-enable에 site-available에서 방금 만든 node의 심볼릭 링크를 걸어준 후 서비스를 재시작하면 됩니다.
 이젠 nginx를 통해 서비스를 제공하므로 node.js의 서비스 포트는 방화벽애서 막는것이 좋습니다. (위의 예에서는 4000번 포트)
+
+# nginx에 php 연동 시키기 (CodeIgniter 사용시)
+```
+sudo apt-get install php5-fpm;
+sudo apt-get install php5-mysql
+sudo apt-get install php5-mcrypt
+sudo php5enmod mcrypt
+```
+nginx에서 php를 구동하기 위해선 php5-fpm이 필요하다.
+
+```
+sudo vi /etc/nginx/sites-enabled/default
+```
+그리고 nginx의 설정을 위해 /etc/nginx/sites-enabled/default 파일을 수정해주자.
+php 만 사용할땐 [이 문서](http://www.tutorialbook.co.kr/entry/Ubuntu-에서-NginX-PHPFPM-연동하기)를 보고 수정하면 되지만,
+code igniter를 사용할땐 [이 문서](http://codeigniter-kr.org/bbs/view/tip?idx=8326)를 보고 수정하는것이 좋다.
+
+설정이 끝났으면 php5-fpm과 nginx를 재시작해주면 된다.
+```
+sudo service php5-fpm restart
+sudo service nginx restart
+```
