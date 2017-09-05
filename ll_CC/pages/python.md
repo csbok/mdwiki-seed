@@ -34,6 +34,12 @@ python manage.py runserver 0.0.0.0:8000
 settings.py파일에 다음과 같이 변경한다.
 ALLOWED_HOSTS = ['ionic.finesoft.net', 'localhost', '127.0.0.1']
 
+## Django Rest Framework
+
+CORS 이슈를 만난다면 다음의 패키지를 설치해서 해결할 수 있다.
+
+https://github.com/ottoyiu/django-cors-headers/
+
 ### AWS S3에 이미지 올리기
 ```
 pip install boto3
