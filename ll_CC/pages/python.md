@@ -34,6 +34,9 @@ python manage.py runserver 0.0.0.0:8000
 settings.py파일에 다음과 같이 변경한다.
 ALLOWED_HOSTS = ['ionic.finesoft.net', 'localhost', '127.0.0.1']
 
+many to many 관계 일때 관계 테이블에 컬럼 추가
+https://stackoverflow.com/questions/12567151/how-to-add-column-in-manytomany-table-django?answertab=votes#tab-top
+
 ## Django Rest Framework
 
 CORS 이슈를 만난다면 다음의 패키지를 설치해서 해결할 수 있다.
