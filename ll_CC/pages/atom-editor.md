@@ -23,3 +23,25 @@ npm의 liver-server와도 같은 역할을 한다.
 
 https://atom.io/packages/atom-typescript
 https://atom.io/packages/autoclose-html
+
+# atom-ide
+
+먼저 아톰을 설치한다.
+https://atom.io 
+
+현재 ide-java 는 atom의 베타 버전만을 지원하므로, ide-java를 쓸 생각이라면
+https://atom.io/beta 에서 베타버전을 설치한다. (하지만 ide-java가 제대로 동작하지 않는것 같다.)
+
+https://ide.atom.io
+ide 설명은 위의 사이트에서 볼 수 있고, 아톰 에디터를 띄운 후 setting(preferences) > install에서 
+atom-ide-ui를 설치한다.
+
+그 후, 자신이 사용할 랭귀지에 대한 플러그인을 설치해야한다.
+ide-typescript 은 깔면 바로 typescript, javascript를 바로 지원해준다.
+
+현재 버전에서 ide-java는 제대로 동작하지 않는것 같다.
+
+그리고 파이썬은 ide-python을 깐 후에
+pip install python-language-server 를 설치해줘야 한다.
+
+virtualenv 환경에 깔면 동작 안하는것 같다. 어쩔수 없이 글로벌 환경에 설치하였다.
