@@ -273,6 +273,17 @@ cordova build ios
 단, WkWebView로 바꾼경우 ajax 통신이 안될수 있으니, 서버에서 12344 포트(플러그인 설치시 바꿀 수 있음)에 대해 CORS를 설정해주도록 한다. 
 (사용해봤지만 여러가지 문제가 많아 프로덕션에선 제거하였다)
 
+---
+
+위의 방법 말고 https://github.com/apache/cordova-plugin-wkwebview-engine 를 사용한 뒤
+
+https://github.com/apache/cordova-plugin-wkwebview-engine#required-permissions
+https://github.com/ionic-team/cordova-plugin-ionic-webview#required-permissions
+
+위의 두가지 레파지토리에서 Required Permissions와 Application Transport Security (ATS) in iOS 9를 참고하면 통신쪽도 해결되지 않을까 싶다.
+
+테스트는 못해봤으므로 시간날때 해보자
+
 ## Release APK 생성하기
 ```
 cordova build android --release
