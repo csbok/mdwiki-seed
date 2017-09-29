@@ -214,6 +214,14 @@ ionic g component COMPONENTNAME
 
 등의 명령어로 템플릿 적용된 파일들을 쉽게 생성할 있다.
 
+## 성능향상
+
+안드로이드는 cross walk를 사용하여, 4.4.2 이하 버전에서도 크롬 웹뷰를 사용할 수 있다.
+https://github.com/ionic-team/cordova-crosswalk-engine 를 보고 플러그인을 설치해주면 된다.
+
+아이폰은 아래의 주소에서 wkwebview를 설치하면 된다. wkwebview가 동작할땐 xcode 콘솔 화면에 Using Ionic WKWebView 라고 뜨게 돈다.
+https://github.com/ionic-team/cordova-plugin-ionic-webview
+
 ## 빌드
 ionic build android --prod --release
 
