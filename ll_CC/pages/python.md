@@ -107,3 +107,51 @@ pip install pypiwin32
 >>> response.xpath('//title/text()').extract()
 ```
 위의 코드로 title의 내용을 추출해 낼 수 있다.
+
+## barcode
+
+barcode를 위한 패키지 pyBarcode를 설치하였지만, code128을 지원하지 않았다.
+pyBarcode를 forking한 viivakoodi 를 설치하여 code128을 사용할 수 있었다.
+
+```python
+>>> import barcode
+>>> from barcode.writer import ImageWriter
+>>> code128 = barcode.get_barcode_class('code128')
+>>> code128_result = code128(u'907823081273', writer=ImageWriter())
+>>> code128_result.save('code128')
+'code128.png'
+```
+
+## postgresql
+
+postgresql을 사용하기 위해 psycopg2를 설치한다.
+
+```bash
+pip install psycopg2
+```
+
+settings.py에 아래와 같이 db의 정보를 셋팅해준다.
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbname',
+        'USER': 'user',
+        'PASSWORD': 'pass',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+```
+
+## django - db에서 부터 model 생성하기
+
+```bash
+python manage.py inspectdb
+```
+
+위 명령어를 사용하면 된다. 자세한 내용은 [이 블로그](http://genius-project.postach.io/post/django-djangoyi-inspectdbeul-iyonghae-oebu-dbe-daehae-ormreul-sseoboja)를 확인해보자.
+
+
+
