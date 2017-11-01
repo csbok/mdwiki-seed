@@ -46,4 +46,3 @@ iPad pro icon retina : ​167*167
 180*180 
 
 참고 : http://pervertible.blog.me/220744018767
-iPad notification icon : 20*20
