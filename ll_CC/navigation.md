@@ -60,6 +60,7 @@
   * [Oracle](pages/oracle.md)
   * [MongoDB](pages/mongodb.md)
   * [CouchDB](pages/couchdb.md)
+  * [Redis](pages/redis.md)
 
 [Infra]()
 
