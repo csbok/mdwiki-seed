@@ -232,6 +232,9 @@ myApp.onPageInit('map', function(page) {
 ```
 위와같이 onPageInit()때 map에 지도 셋팅을 해주면 하이브리드 앱에서도 다음지도를 볼 수가 있다.
 
+## input태그에 autofocus="" 속성이 있으면 안된다.
+django에서 input태그를 랜더링 할때 autofocus=""를 넣어주는데, 이속성이 페이지 렌더링할때 느리게 만들어, 검정 화면이 순간적으로 보인다.
+
 ## CrossWalk 사용하기
 
 안드로이드 4.4 버전부터는 기본 웹뷰가 크로미움으로 바뀌어서 별 문제 없는데,
