@@ -24,7 +24,7 @@ npm의 liver-server와도 같은 역할을 한다.
 https://atom.io/packages/atom-typescript
 https://atom.io/packages/autoclose-html
 
-# atom-ide
+## atom-ide
 
 먼저 아톰을 설치한다.
 https://atom.io 
@@ -45,3 +45,6 @@ ide-typescript 은 깔면 바로 typescript, javascript를 바로 지원해준�
 pip install python-language-server 를 설치해줘야 한다.
 
 virtualenv 환경에 깔면 동작 안하는것 같다. 어쩔수 없이 글로벌 환경에 설치하였다.
+
+## teletype - 원격 페어 프로그래밍  
+https://teletype.atom.io
