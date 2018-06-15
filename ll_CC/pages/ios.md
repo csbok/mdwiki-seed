@@ -46,3 +46,19 @@ iPad pro icon retina : ​167*167
 180*180 
 
 참고 : http://pervertible.blog.me/220744018767
+
+
+1. Swift 언어 및 기본적인 iOS 지식  
+https://programmers.co.kr/learn/courses/4
+
+1. Autolayout
+
+1. OpenSource Library
+    1. [Alamofire](https://github.com/Alamofire/Alamofire)
+    1. [Kingfisher](https://github.com/onevcat/Kingfisher)
+
+1. Firebase
+
+1. Zeplin
+
+1. Facebook, Google, Naver, Kakao ID login
